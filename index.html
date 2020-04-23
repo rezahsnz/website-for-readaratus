@@ -1,0 +1,128 @@
+<html>
+<head>
+	<meta charset='UTF-8'>
+	<title>readaratus - A dynamic book reading system for computers</title> 
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="Keywords" content="ebook reader, pdf reader">
+	<meta name="Description" content="A digital book reading tool that is aimed to augment reading capabilities of humans.">
+	<link rel="icon" href="/favicon.ico" type="image/x-icon">
+	<style>
+		body{
+			direction: "ltr";
+			padding-left: 15%;
+			padding-right: 15%;
+			background: whitesmoke;
+            font-family: sans-serif, serif;
+            font-size: 1.1em;
+		}	
+        .section_heading{
+            text-align: center;
+            background-color: lightblue;
+            padding-top: 16px;
+            padding-bottom: 16px;
+        }
+        .figure{
+            width: 640px;
+            height: 480px;
+            border: 1px dashed black;
+        }
+        .caption{
+        }
+        .faq_question{
+            color: brown;
+            margin-bottom: 4px;
+        }
+	</style>
+</head>
+<body>
+    <div style="margin-top: 32px; text-align: center;">
+        <h3>readaratus</h3>
+        <p>A dynamic book reading system for computers</p>
+        <iframe width="640" height="480" src="https://www.youtube.com/embed/j3546bj08Vk"></iframe> 
+    </div>
+    <div id="motivation" style="margin-top: 16px;">
+        <h4 class="section_heading">Motivation</h4>
+        <p align="justify">
+            Since the invention of the printing press we have seen little progress in the reading habits of humans. A physical book once published on paper or imitated on a computer, would not allow for its content to interact with the reader. No book, for example, would let the reader to turn any of its tables into an interactive chart despite the fact that it is quite difficult for humans to interpret large bodies of numbers. This immutable nature of paper curbs mental development of humans, but the situation is being changed by the arrival of computers. Humans(and other animals) learn by interacting with their environment and an environment rich in live elements would definitely boost the intellectual abilities of its reader. A computer is a medium that provides necessary tools needed to build a dynamic environment for any situation and there is an urgent need for lush, rich, and dynamic learning environments.<br/>readaratus is a tiny proof of concept and computerized experiment to introduce some dynamism into the realm of books. Ultimately, readaratus aims to be a "self-decoding", "dynamic", and "machine-friendly" protocol for learning.<br/>The following list demonstrates the current features of readaratus:
+            <ul>
+                <li><p align="justify"><font color="blue">Unit conversion</font><br/>A minimal mechanism for converting units between SI and Imperial systems of measuring units.</p></li>
+                <li><p align="justify"><font color="blue">Figure referencing</font><br/>It is common for pieces of text to be devoted to a some graphical representation. If a piece of text references a figure which does not reside in the same page, the reader has to manually find that particular figure in order to understand the point of the text. In physical books this is achieved by means of hands: groups of fingers dedicated to particular pages with intermittent activation of the page of interest. In a typical computer reading software this is done by frequent linking from the text to the figure and vice versa provided that the author has provided the link and the software provides facilitates for going back to where the user was. This process causes distortion in concentration whether the book is physical or digital. We have developed a mechanism for an on-demand invocation of figures wherever they are referenced. This mechanism is activated whenever the user moves his mouse pointer on top of the text that references a figure. Upon activation, the figure gets displayed on an overlaid box.</p></li>
+                <li><p align="justify"><font color="blue">Teleportation</font><br/>Users have the freedom to jump to various objects within the book: Page numbers, page labels, TOC items(introduction, epilogue, chapter I, Section 2.4, ...), immediate neighbor TOC items(next chapter, previous subsection, ...), and figures. A dialog is prepared that lets the user to find any object.</p></li>
+                <li><p align="justify"><font color="blue">Enhanced TOC</font><br/>We have developed an enhanced TOC subsystem that lets users to efficiently navigate within the book. TOC is read, decoded, grouped, and then absolute and relative means for navigation are provided. By absolute navigation we mean tools that facilitate jumping, for example, from "chapter 3" to "subsection 8.2", and by relative navigation we mean tools that aid in navigating to the neighboring "chapters", "sections", ... .</p></li>
+                <li><p align="justify"><font color="blue">Dual-page text lookup</font><br/>A thin probabilistic proof of concept is provided in the "Find text" dialog where the user has the option of extending her textual search to two pages since it is common for a sentence to have some of its words in page "X" and the rest in page "X+1".</p></li>  
+                <li><p align="justify"><font color="blue">Real page numbers</font><br/>Page numbers in PDF documents are either provided by the the authors or are indexed from 1. Indexed page numbers are often some pages ahead or behind the real page number(e.g. you are on page 45 but your software reports 72). We have developed means to overcome this issue and the page numbers you see or request are real as they are on paper.</p></li>
+                <li><p align="justify"><font color="blue">TOC synthesis</font><br/>Some PDFs lack digitized "Table of Contents". If a book fails to provide a TOC, we try to create a synthetic TOC out of it. This is achieved by some analysis performed on initial pages of a PDF.</p></li>
+
+            </ul>
+            <p align="justify">In future versions we intend to introduce the following features(mainly for PDF documents):</p>
+            <ul>                
+                <li><p align="justify"><font color="green">Table to chart</font><br/>Charts are easier to understand compared to tables. We need to have mechanisms that would allow us to convert a table into an interactive chart.</p></li>
+                <li><p align="justify"><font color="green">Live code snippets</font><br/>A book about programming is full of code snippets. Someone learning to program in a computer language should be able to tinker with the code she is studying. Books accompanied with tiny on-demand interpreters for programming languages would make it easier to learn any programming language.</p></li>
+                <li><p align="justify"><font color="green">Keyboard-averse gesture commanding</font><br/>Keyboards are low pass filters that translate the rich variety of signals issued from our hands into mild keystrokes. We are working on a gesture input system that goes beyond simple shortcut keys.</p></li>
+                
+            </ul>
+            Our misson is to remind people that computers could be used in better ways.
+        </p>
+    </div>    
+    <div id="faq" style="margin-top: 16px;">
+        <h4 class="section_heading">Preemptive Frequently Asked Questions</h4>
+        <p align="justify">
+            <font color="brown">What formats do you support?</font><br/>
+            As of version 2.1 we only support the PDF format.
+        </p>
+        <p align="justify">
+            <font color="brown">What is PDF?</font><br/>
+            PDF is an ISO standard for document storage and stands for "Portable Document Format". PDF has a page description scheme(borrowed from Ghostscript) that treats the page as a 2-D coordinate system where the top-left corner is assumed as the origin and objects(text, figure, ...) are geographically positioned across the page in this addressing manner. For more information please take a look at the PDF standard <a href="https://www.iso.org/standard/63534.html">specification</a>.
+        </p>
+        <p align="justify">
+            <font color="brown">Is readaratus a software for reading books or a protocol?</font></br/>
+            Both.
+            Ultimately, readaratus would be a protocol for learning. This means that it stores the content and the decoder for that content in the same unit of storage. Think of it as a content ready virtual computer that can run on any machine and eliminates the need for an external reading tool.<br/>
+            It is a reading program since we have already a lot of books in the PDF format that need to be dealt with.
+        </p>
+        <p align="justify">
+            <font color="brown">What do you mean by "machine-friendly"?</font><br/>
+            Current content storage systems are not designed to be retrieved by computerized routines. The PDF standard, for example, provides no directions for retrieving figures of a page, there is no way of distinguishing between header, body, and footer of a page, there is no way of extracting drawn charts, tables are difficult to extract and ... . To fully grasp he tyranny of the PDF standard just look how many projects are out there trying to extract information buried in PDFs. Word processors and type setting systems which are in turn used to produce PDFs burn all these useful meta-data about objects simply because the PDF scheme does not provide any means for storing them.<br/>A protocol that provides the content is obliged to aid potential readers in decoding the content.
+        </p>
+        <p align="justify">
+            <font color="brown">What do you mean by "self-decoding"?</font><br/>
+                A readaratus unit of storage is divided into several parts. One of the important parts contains the instructions used to prepare a decoding tool. This decoding tool is similar to the mainstream book reading softwares and is in turn used to display the book contained in the package.
+        </p>
+        <p align="justify">
+            <font color="brown">What common features of mainstream PDF readers are missing in readaratus?</font><br/>
+            Annotations, form filling, password protection of files, and object(text, figure, ...) selection/copying are not incorporated in readaratus. We need to discuss these issues with people before incorporating them in our protocol.
+        </p>  
+        <p align="justify">
+            <font color="brown">What languages are supported?</font><br/>
+            As of version 2.1, we support books written in English.
+        </p>
+        <p align="justify">
+            <font color="brown">What is the license?</font><br/>
+            <a href="www.gnu.org/licenses/gpl-3.0.html">GNU General Public License V3 or later.</a>
+        </p>
+        <p align="justify">
+            <font color="brown">How do I run the downloaded program?</font><br/>
+            Extract the file you've downloaded, make `readaratus` executable, and run. You would also need to install poppler-glib and Gtk3 runtime libraries.
+        </p>     
+    </div>
+    <div id="download" style="text-align: left; margin-top: 16px;">
+        <h4 class="section_heading">Download(v2.1)</h4>
+        <p>
+            <a href="https://snapcraft.io/readaratus">
+              <img alt="Get it from the Snap Store" src="https://snapcraft.io/static/images/badges/en/snap-store-black.svg" />
+            </a>
+        </p>
+        <p>
+            Direct: <a href="./release/readaratus-2.1-64bit-Linux.tar.gz">readaratus(Linux 64-bit)</a><br/>
+            For older versions, please visit github <a href="https://github.com/rezahsnz/readaratus/releases">releases</a>.
+        </p>
+        
+        <p>
+            Source code: <a href="https://github.com/rezahsnz/readaratus">https://github.com/rezahsnz/readaratus</a>
+        </p>
+    </div>
+    <div style="background-color: lightblue; padding: 8px; margin-top: 24px;">        
+        <a href="mailto: info@readaratus.ir">info@readaratus.ir</a>
+    </div>
+</body>
+</html>
